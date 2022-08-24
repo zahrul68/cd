@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="number" id="set_waktu" placeholder="tentukan waktu">
+   <button onclick="countdown()">Jalankan</button>
+   <span id="sisa_waktu"></span>
+   <script>
+    function countdown(){
+        let set = document.getElementById("set_waktu").value;
+        let sisa = document.getElementById("sisa_waktu");
+        const interval = setInterval(() => {
+            sisa.innerHTML = "Sisa waktu:" +set+ " detik";
+            set--;
+            if(set < 0){
+                clearInterval(interval);
+                sisa.innerHTML = "Waktu Habis";
+            }
+        }, 1000)
+    }
+   </script>
+</body>
+</html>
